@@ -193,7 +193,3 @@ Contributions are welcome! Please follow these steps:
 ## Acknowledgments
 
 This project is inspired by advancements in autonomous vehicle technologies and the open-source community.
-
----
-
-Feel free to update the repository link, license, or acknowledgments as needed. Would you like help drafting a contribution guide or issue templates for GitHub?
