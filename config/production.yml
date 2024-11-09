@@ -1,0 +1,39 @@
+camera:
+  id: 0                  # Camera ID (0 for default webcam)
+  width: 1920            # Camera resolution width
+  height: 1080           # Camera resolution height
+  fps: 30                # Frames per second
+
+preprocessing:
+  blur_kernel_size: 5    # Kernel size for Gaussian blur
+  clahe_clip_limit: 2.0  # Contrast limit for CLAHE
+  perspective_src:       # Points for perspective transform (source)
+    - [590, 450]
+    - [690, 450]
+    - [1080, 720]
+    - [200, 720]
+  perspective_dst:       # Points for perspective transform (destination)
+    - [320, 0]
+    - [960, 0]
+    - [960, 720]
+    - [320, 720]
+
+detection:
+  sliding_window_width: 200       # Width of the sliding windows for lane detection
+  sliding_window_height: 80       # Height of the sliding windows for lane detection
+  margin: 100                     # Width of the search margin around lane line
+  minpix: 50                      # Minimum number of pixels required to recenter window
+  threshold_min: 100              # Minimum threshold for binary image
+  threshold_max: 255              # Maximum threshold for binary image
+
+tracking:
+  history_size: 5                 # Number of frames for lane smoothing
+  distance_threshold: 100         # Maximum deviation for lane position consistency
+  angle_threshold: 0.5            # Maximum angle change per frame
+
+system:
+  gpu_enabled: true               # Use GPU for processing (if available)
+  log_level: INFO                 # Logging level
+  log_file: "logs/lane_detection.log"  # Path to log file
+  debug_mode: false               # Enable debug outputs
+  save_data: false                # Save processed frames to disk for debugging
